@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">yazlabharrypotter</string>
+    <string name="create_new_account">SIGNUP</string>
+    <string name="login_to_existing_account">LOGIN</string>
+    <string name="single_player_button">SINGLE PLAYER</string>
+    <string name="multiplayer_button">MULTIPLAYER</string>
+</resources>

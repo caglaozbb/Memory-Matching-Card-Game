@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+
+    <ImageView
+        android:id="@+id/hogwarts_crest_image_view"
+        android:layout_width="392dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/_137929c4b96600004f676fe" />
+
+    <TextView
+        android:id="@+id/tv_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hogwarts_crest_image_view"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Harry Potter: Memory Game"
+        android:textColor="#D3A625"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#D3A625"
+        android:text="@string/login_to_existing_account"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#D3A625"
+        android:text="@string/create_new_account"
+        android:textColor="@android:color/white" />
+
+
+    <ImageView
+        android:id="@+id/back_to_hogwarts_view"
+        android:layout_width="166dp"
+        android:layout_height="107dp"
+        android:layout_below="@id/btn_signup"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/back_to_hogwarts___logo_png_by_mintmovi3_dclpm88_fullview" />
+
+
+</RelativeLayout>
