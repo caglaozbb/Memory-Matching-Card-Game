@@ -14,16 +14,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
         android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="PLEASE SELECT AN OPTION:"
-        android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textColor="#740001"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <Button
-        android:id="@+id/btn_singleplayer"
+        android:id="@+id/btn_singlePlayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title2"
@@ -35,10 +35,10 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/btn_multiplayer"
+        android:id="@+id/btn_multiPlayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_singleplayer"
+        android:layout_below="@id/btn_singlePlayer"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
