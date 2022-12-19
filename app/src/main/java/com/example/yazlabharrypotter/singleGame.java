@@ -4,42 +4,34 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.lang.ref.Reference;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
+
 
 public class singleGame extends AppCompatActivity {
 
     private boolean flipped = false;
     private ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5;
     private ImageButton[] imageButtons = {imageButton1, imageButton2, imageButton3, imageButton4};
-
     private DatabaseReference database;
+    List<Bitmap> bmp;
 
     private int[] listimage = new int[4];
 
@@ -53,11 +45,11 @@ public class singleGame extends AppCompatActivity {
         //MediaPlayer mediaPlayer2= MediaPlayer.create(this,R.raw.soundfail);
 
 
-        database = FirebaseDatabase.getInstance().getReference("1");
+        database = FirebaseDatabase.getInstance().getReference();
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-               // System.out.println(snapshot.getValue().toString());
+                // System.out.println(snapshot.getValue().toString());
             }
 
             @Override
@@ -66,27 +58,41 @@ public class singleGame extends AppCompatActivity {
             }
         });
 
+        bmp=new ArrayList<>();
+        for (int i = 1; i < 5; i++){
+            for (int j = 1; j < 7; j++) {
+                database.child(String.valueOf(i)).child(String.valueOf(j)).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
+                        String image = snapshot.child("image").getValue().toString();
+                        String imageDataBytes = image.substring(image.indexOf(",") + 1);
+                        InputStream stream = new ByteArrayInputStream(Base64.decode(imageDataBytes.getBytes(), Base64.DEFAULT));
+                        Bitmap bitmap = BitmapFactory.decodeStream(stream);
+                        bmp.add(bitmap);
+                        //imageButton5.setImageBitmap(bitmap);
+                        //System.out.println(imageDataBytes);
+                        System.out.println(bmp.size());
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-        database.child("1").child("image").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
+                    }
 
-                String image = snapshot.child("1").getValue().toString();
-                String imageDataBytes = image.substring(image.indexOf(",")+1);
-                InputStream stream = new ByteArrayInputStream(Base64.decode(imageDataBytes.getBytes(), Base64.DEFAULT));
-               Bitmap bitmap= BitmapFactory.decodeStream(stream);
-                imageButton5.setImageBitmap(bitmap);
-                //System.out.println(imageDataBytes);
-
+                });
             }
+           // imageButton5.setImageBitmap(bmp.get(1));
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+    }
+        if(bmp.isEmpty()){
+            System.out.println("bos");
+        }
+       // imageButton5.setImageBitmap(bmp.get(1));
 
-            }
-        });
+
+
+
 
 
         imageButtons[0] = this.imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
@@ -104,10 +110,10 @@ public class singleGame extends AppCompatActivity {
         boolean[] isback = new boolean[4];
 
 
-          listimage[0] = R.drawable.back_to_hogwarts___logo_png_by_mintmovi3_dclpm88_fullview;
-          listimage[1] = R.drawable.back_to_hogwarts___logo_png_by_mintmovi3_dclpm88_fullview;
-          listimage[2] = R.drawable.back_to_hogwarts___logo_png_by_mintmovi3_dclpm88_fullview;
-          listimage[3] = R.drawable.back_to_hogwarts___logo_png_by_mintmovi3_dclpm88_fullview;
+          listimage[0] = R.drawable.harry;
+          listimage[1] = R.drawable.harry;
+          listimage[2] = R.drawable.hermonie;
+          listimage[3] = R.drawable.hermonie;
 
 
 
@@ -154,21 +160,6 @@ public class singleGame extends AppCompatActivity {
                         } else if (listimage[finalI] != listimage[lastClicked[0]]) {
                             //  mediaPlayer2.start();
 
-                                 /* try {
-                                      imageButtons[finalI].setImageResource(listimage[finalI]);
-                                      Thread.sleep(2000);
-                                    //  imageButtons[finalI].setImageResource(imgback);
-                                      imageButtons[lastClicked[0]].setImageResource(imgback);
-                                  } catch (InterruptedException e) {
-                                      e.printStackTrace();
-                                  }*/
-                                  /*timer.schedule(new TimerTask() {
-                                      @Override
-                                      public void run() {
-                                          imageButtons[finalI].setImageResource(imgback);
-                                          imageButtons[lastClicked[0]].setImageResource(imgback);
-                                      }
-                                  }, 2000);*/
                             final Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
                                 @Override
@@ -186,15 +177,19 @@ public class singleGame extends AppCompatActivity {
                     else if (clicked[0] == 0) {
                         twoTurned[0] = false;
                     }
-                }
-
-                ;
+                };
 
             });
 
-        }
-        ;
+        };
 
+        final Handler handler2 = new Handler();
+        handler2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("listenin boyutu");
+                imageButton5.setImageBitmap(bmp.get(3));
+            }}, 10000);
 
     }
 }

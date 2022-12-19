@@ -53,7 +53,7 @@ public class login extends AppCompatActivity {
 
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
-
+/*
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Email field is required",Toast.LENGTH_LONG).show();
         }
@@ -76,7 +76,15 @@ public class login extends AppCompatActivity {
 
                 }
             });
-        }
+        }*/
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(login.this, home.class);
+                startActivity(homeIntent);
+            }
+        });
 
     }
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -38,69 +39,92 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="00:00:00" />
-        <Button
-            android:id="@+id/button_NewGame"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#D3A625"
-            android:text="Start" />
 
-        <Button
-            android:id="@+id/logout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#D3A625"
-            android:text="logout" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Level1"
+            android:orientation="horizontal">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".Level1">
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/imageButton1"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="28dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+            <Button
+                android:id="@+id/button_NewGame"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#D3A625"
+                android:text="Start"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="7dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="30dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
+            <Button
+                android:layout_marginLeft="30dp"
+                android:id="@+id/logout"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#D3A625"
+                android:text="logout"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="7dp" />
+            </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintStart_toStartOf="@+id/imageButton1"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton1" />
+            <ImageButton
+                android:scaleType="fitXY"
+                android:id="@+id/imageButton3"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/imageButton1"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton1" />
 
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+            <ImageButton
+                android:scaleType="fitXY"
+                android:id="@+id/imageButton1"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageButton2" />
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+            <ImageButton
+                android:scaleType="fitXY"
+                android:id="@+id/imageButton2"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="92dp"
+                android:layout_marginEnd="44dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:scaleType="fitXY"
+                android:id="@+id/imageButton5"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+
+            <ImageButton
+                android:scaleType="fitXY"
+                android:id="@+id/imageButton4"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
