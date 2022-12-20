@@ -43,8 +43,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".Level1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:context=".Level1">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -61,10 +62,10 @@
                     tools:layout_editor_absoluteY="7dp" />
 
                 <Button
-                    android:layout_marginLeft="30dp"
                     android:id="@+id/logout"
                     android:layout_width="168dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
                     android:backgroundTint="#D3A625"
                     android:text="logout"
                     tools:ignore="MissingConstraints"
@@ -73,52 +74,85 @@
             </LinearLayout>
 
             <ImageButton
-                android:scaleType="fitXY"
                 android:id="@+id/imageButton3"
                 android:layout_width="100dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="@+id/imageButton1"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton1" />
 
             <ImageButton
-                android:scaleType="fitXY"
                 android:id="@+id/imageButton1"
                 android:layout_width="90dp"
                 android:layout_height="140dp"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="4dp"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageButton2" />
 
             <ImageButton
-                android:scaleType="fitXY"
                 android:id="@+id/imageButton2"
                 android:layout_width="90dp"
                 android:layout_height="140dp"
                 android:layout_marginTop="92dp"
                 android:layout_marginEnd="44dp"
+                android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:scaleType="fitXY"
-                android:id="@+id/imageButton5"
-                android:layout_width="90dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="4dp"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
             <ImageButton
-                android:scaleType="fitXY"
                 android:id="@+id/imageButton4"
                 android:layout_width="90dp"
                 android:layout_height="140dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="4dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="176dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+                app:layout_constraintTop_toTopOf="@+id/imageButton3" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="212dp"
+                android:layout_marginEnd="4dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="612dp"
+                android:layout_marginEnd="48dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="90dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="364dp"
+                android:layout_marginEnd="244dp"
+                android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="@+id/imageButton2"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 

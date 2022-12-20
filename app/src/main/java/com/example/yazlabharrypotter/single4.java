@@ -2,14 +2,19 @@ package com.example.yazlabharrypotter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,24 +27,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
-import java.util.TimerTask;
 
-
-public class multiGame extends AppCompatActivity {
-
+public class single4 extends AppCompatActivity {
     private boolean flipped = false;
-    private ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5;
-    private ImageButton[] imageButtons = {imageButton1, imageButton2, imageButton3, imageButton4};
+    private ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6, imageButton7, imageButton8;
+    private ImageButton[] imageButtons = {imageButton1, imageButton2, imageButton3, imageButton4, imageButton6, imageButton7, imageButton8};
     private DatabaseReference database;
     List<Bitmap> bmp;
 
-    private int[] listimage = new int[4];
+    private int[] listimage = new int[7];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_game);
+        setContentView(R.layout.activity_single4);
         Timer timer = new Timer();
         //MediaPlayer mediaPlayer1= MediaPlayer.create(this,R.raw.applause);
         //MediaPlayer mediaPlayer2= MediaPlayer.create(this,R.raw.soundfail);
@@ -58,13 +60,12 @@ public class multiGame extends AppCompatActivity {
             }
         });
 
-        bmp=new ArrayList<>();
+        /*bmp=new ArrayList<>();
         for (int i = 1; i < 5; i++){
             for (int j = 1; j < 7; j++) {
                 database.child(String.valueOf(i)).child(String.valueOf(j)).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
                         String image = snapshot.child("image").getValue().toString();
                         String imageDataBytes = image.substring(image.indexOf(",") + 1);
                         InputStream stream = new ByteArrayInputStream(Base64.decode(imageDataBytes.getBytes(), Base64.DEFAULT));
@@ -91,7 +92,7 @@ public class multiGame extends AppCompatActivity {
         // imageButton5.setImageBitmap(bmp.get(1));
 
 
-
+*/
 
 
 
@@ -99,13 +100,16 @@ public class multiGame extends AppCompatActivity {
         imageButtons[1] = this.imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
         imageButtons[2] = this.imageButton3 = (ImageButton) findViewById(R.id.imageButton3);
         imageButtons[3] = this.imageButton4 = (ImageButton) findViewById(R.id.imageButton4);
+        imageButtons[4] = this.imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
+        imageButtons[5] = this.imageButton6 = (ImageButton) findViewById(R.id.imageButton6);
+        imageButtons[6] = this.imageButton7 = (ImageButton) findViewById(R.id.imageButton7);
+        imageButtons[7] = this.imageButton8 = (ImageButton) findViewById(R.id.imageButton8);
 
 
         int imgback = R.drawable.indir;
 
         final int[] clicked = {0};
         final boolean[] twoTurned = {false};
-        final boolean noteq=false;
         final int[] lastClicked = {-1};
         boolean[] isback = new boolean[4];
 
@@ -114,6 +118,10 @@ public class multiGame extends AppCompatActivity {
         listimage[1] = R.drawable.harry;
         listimage[2] = R.drawable.hermonie;
         listimage[3] = R.drawable.hermonie;
+        listimage[4] = R.drawable.hermonie;
+        listimage[5] = R.drawable.hermonie;
+        listimage[6] = R.drawable.hermonie;
+        listimage[7] = R.drawable.hermonie;
 
 
 
@@ -183,13 +191,13 @@ public class multiGame extends AppCompatActivity {
 
         };
 
-        final Handler handler2 = new Handler();
+       /* final Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
             @Override
             public void run() {
                 System.out.println("listenin boyutu");
                 imageButton5.setImageBitmap(bmp.get(3));
-            }}, 10000);
+            }}, 10000);*/
 
     }
 }
