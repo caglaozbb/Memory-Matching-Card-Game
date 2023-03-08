@@ -30,7 +30,7 @@ Simple and intuitive UI design for a better user experience.
 
 + Launch the app on your Android device.
 + Register a new account or log in to an existing account.
-+ Choose a difficulty level Gelen Kutusu (16) - caglaozbb@gmail.com - Gmail(2x2, 4x4) and start playing the game.
++ Choose a difficulty level(2x2, 4x4) and start playing the game.
 + Match pairs of cards with Harry Potter characters.
 + Keep playing until you match all pairs of cards.
 
