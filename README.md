@@ -42,6 +42,8 @@ Simple and intuitive UI design for a better user experience.
 + Save the game progress and high scores.
 + Add more levels.
 
+![game design](https://raw.githubusercontent.com/caglaozbb/repo-name/Memory-Matching-Card-Game/blob/master/Varlık%201.png)
+
 ## 📬 Contact Me
 
 If you want to contact me, you can reach me through below.
