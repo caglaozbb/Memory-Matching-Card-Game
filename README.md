@@ -1,4 +1,3 @@
-# Memory-Matching-Card-Game
 An android app for a harry potter themed card game in java 
 
 📱 Harry Potter Memory Matching Game
