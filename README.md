@@ -30,7 +30,7 @@ Simple and intuitive UI design for a better user experience.
 
 + Launch the app on your Android device.
 + Register a new account or log in to an existing account.
-+ Choose a difficulty level (2x2, 4x4) and start playing the game.
++ Choose a difficulty level Gelen Kutusu (16) - caglaozbb@gmail.com - Gmail(2x2, 4x4) and start playing the game.
 + Match pairs of cards with Harry Potter characters.
 + Keep playing until you match all pairs of cards.
 
@@ -42,7 +42,7 @@ Simple and intuitive UI design for a better user experience.
 + Save the game progress and high scores.
 + Add more levels.
 
-![game design](https://raw.githubusercontent.com/caglaozbb/repo-name/Memory-Matching-Card-Game/blob/master/Varlık%201.png)
+![game design](https://github.com/caglaozbb/Memory-Matching-Card-Game/blob/master/Varlık%201.png?raw=true)
 
 ## 📬 Contact Me
 
